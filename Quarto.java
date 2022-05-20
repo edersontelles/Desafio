@@ -146,11 +146,11 @@ public class Quarto extends Check{
 	public void editarQuarto() {
 		
 		int posicaoEditar;
-		String nome, posicao, nomeEditado, posicaoEditado;
-		boolean fumante, fumanteEditado;
+		String nome, posicao, nomeEditado, posicaoEditado, fumanteEditado;
+		boolean fumante, fumanteEditadoBoo;
 		float valorDiaria, valorDiariaEditado;
 		int pessoaPorQuarto, pessoaPorQuartoEditado;
-		
+
 		System.out.println("\n*******************************");
 		System.out.println("******** EDITAR CLIENTE *******");
 		for(int i = 0; i < quartoNomes.size(); i++) {
@@ -164,29 +164,31 @@ public class Quarto extends Check{
 		fumante = quartoFumante.get(posicaoEditar);
 		valorDiaria = quartoValorDiaria.get(posicaoEditar);
 		pessoaPorQuarto = quartoPessoaPorQuarto.get(posicaoEditar);
-		/*
+		
 		System.out.println("Editar nome " + nome + " para: ");
 		nomeEditado = teclado.next();
-		System.out.println("Editar posição de " + posicao + " para: ");
+		System.out.println("Editar posição  " + posicao + " para: ");
 		posicaoEditado = teclado.next();
-		System.out.println("Editar fumante de" + fumante + " para: ");
-		fumanteEditado = teclado.nextBoolean();
-		System.out.println("Editar valor da diaria de " + valorDiaria + " para: ");
+		System.out.println("Editar valor da diaria  " + valorDiaria + " para: ");
 		valorDiariaEditado = teclado.nextFloat();
-		System.out.println("Editar nº de pessoa p/ quarto de" + pessoaPorQuarto + " para: ");
+		System.out.println("Editar nº de pessoa p/ quarto " + pessoaPorQuarto + " para: ");
 		pessoaPorQuartoEditado = teclado.nextInt();
-		*/
+		System.out.println("Editar fumante " + fumante + " para: ");
+		fumanteEditado = teclado.next();
+		fumanteEditadoBoo = converteTrueFalse(fumanteEditado);
+		
+		/* 		
 		nomeEditado = "XXX";
 		posicaoEditado = "Norte";
 		fumanteEditado = true;
 		valorDiariaEditado = 200;
 		pessoaPorQuartoEditado = 1;
-				
+		*/		
 		quartoNomes.set(posicaoEditar, nomeEditado);
 		quartoPosicao.set(posicaoEditar, posicaoEditado);
-		quartoFumante.set(posicaoEditar, true);
-		quartoValorDiaria.set(posicaoEditar, (float) 200);
-		quartoPessoaPorQuarto.set(posicaoEditar, 1);
+		quartoFumante.set(posicaoEditar, fumanteEditadoBoo);
+		quartoValorDiaria.set(posicaoEditar, (float) valorDiariaEditado);
+		quartoPessoaPorQuarto.set(posicaoEditar, pessoaPorQuarto);
 	}
 
 }

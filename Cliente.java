@@ -174,7 +174,8 @@ public void fazerCheckOut() {
 		int posicaoEditar;
 		String nome, dataNasc, email, cidade, uF, nomeEditado, dataNascEditado, emailEditado, cidadeEditado, ufEditado; 
 		Integer telefone, telefoneEditado;
-		Boolean fumante, fumanteEditado;
+		Boolean fumante, fumanteEditadoBoo;
+		String fumanteEditado;
 		
 		System.out.println("\n*******************************");
 		System.out.println("******** EDITAR CLIENTE *******");
@@ -191,22 +192,23 @@ public void fazerCheckOut() {
 		cidade = clienteCidade.get(posicaoEditar);
 		uF = clienteUf.get(posicaoEditar);
 		fumante = clienteFumante.get(posicaoEditar);//Boolean
-		/*
-		System.out.println("Editar " + nome + " para: ");
+		
+		System.out.println("Editar nome " + nome + " para: ");
 		nomeEditado = teclado.next();
-		System.out.println("Editar " + dataNasc + " para: ");
+		System.out.println("Editar D/N " + dataNasc + " para: ");
 		dataNascEditado = teclado.next();
-		System.out.println("Editar " + email + " para: ");
+		System.out.println("Editar email " + email + " para: ");
 		emailEditado = teclado.next();
-		System.out.println("Editar " + telefone + " para: ");
+		System.out.println("Editar telefone " + telefone + " para: ");
 		telefoneEditado = teclado.nextInt();
-		System.out.println("Editar " + cidade + " para: ");
+		System.out.println("Editar cidade " + cidade + " para: ");
 		cidadeEditado = teclado.next();
-		System.out.println("Editar " + uF + " para: ");
+		System.out.println("Editar UF " + uF + " para: ");
 		ufEditado = teclado.next();
-		System.out.println("Editar " + fumante + " para: ");
-		fumanteEditado = teclado.nextBoolean();
-		*/
+		System.out.println("Editar fumante " + converteSimNao(fumante) + " para: ");
+		fumanteEditado = teclado.next();
+		fumanteEditadoBoo = converteTrueFalse(fumanteEditado);
+		/*
 		nomeEditado = "BBB";
 		dataNascEditado = "01/01/2000";
 		emailEditado = "bbb@bbb.com";
@@ -214,14 +216,14 @@ public void fazerCheckOut() {
 		cidadeEditado = "Bbbnopolis";
 		ufEditado = "BB";
 		fumanteEditado = true;
-		
+		*/
 		clienteNomes.set(posicaoEditar, nomeEditado);
 		clienteDataNasc.set(posicaoEditar, dataNascEditado);
 		clienteEmail.set(posicaoEditar, emailEditado);
 		clienteTelefone.set(posicaoEditar, telefoneEditado);
 		clienteCidade.set(posicaoEditar, cidadeEditado);
 		clienteUf.set(posicaoEditar, ufEditado);
-		clienteFumante.set(posicaoEditar, fumanteEditado);
+		clienteFumante.set(posicaoEditar, fumanteEditadoBoo);
 	}
 	
 	}

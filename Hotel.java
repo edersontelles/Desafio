@@ -29,7 +29,8 @@ public class Hotel{
 		Quarto quarto = new Quarto();
 
 		while(menu) {
-			System.out.println("\n============== Menu Principal ==============");
+			System.out.println("\n____________________________________________");
+			System.out.println("============== Menu Principal ==============\n");
 			System.out.println("1 - Cadastrar, editar ou excluir Clientes");
 			System.out.println("2 - Cadastrar, editar ou excluir Quartos");
 			System.out.println("3 - Verificar quartos disponiveis");

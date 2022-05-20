@@ -58,4 +58,14 @@ public class Check {
 		return sN; // retorna "sim" ou "não"
 	}
 	
+	public Boolean converteTrueFalse(String valorString) {
+		Boolean tF;
+		
+		if(valorString.equals("Sim") || valorString.equals("sim")) {
+			tF = true;
+		}else {
+			tF = false;
+		}
+		return tF;
+	}
 }

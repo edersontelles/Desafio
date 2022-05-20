@@ -68,9 +68,10 @@ public void fazerCheckOut() {
 		
 		String nome, dataNasc, email, cidade, uF;
 		Integer telefone;
-		Boolean fumante;
+		String fumante;
+		Boolean fumanteBoo;
 		
-		/*
+		
 		System.out.println("Nome: ");
 		nome = teclado.next();
 		System.out.println("Data de Nascimento: ");
@@ -84,8 +85,8 @@ public void fazerCheckOut() {
 		System.out.println("UF: ");
 		uF = teclado.next();
 		System.out.println("Fumante Sim ou Não: ");
-		fumante = teclado.nextBoolean();
-		//quartoDisponivel.add(false);
+		fumante = teclado.next();
+		fumanteBoo = converteTrueFalse(fumante);
 		
 		clienteNomes.add(nome);
 		clienteDataNasc.add(dataNasc);
@@ -93,9 +94,10 @@ public void fazerCheckOut() {
 		clienteTelefone.add(telefone);
 		clienteCidade.add(cidade);
 		clienteUf.add(uF);
-		clienteFumante.add(fumante);
+		clienteFumante.add(fumanteBoo);
 		clienteNumQuarto.add(null);
-		*/
+		
+		/* 	
 		clienteNomes.add("Fulano");
 		clienteDataNasc.add("01/01/1001");
 		clienteEmail.add("aaa@aaa.com");
@@ -113,6 +115,7 @@ public void fazerCheckOut() {
 		clienteUf.add("SS");
 		clienteFumante.add(true);
 		clienteNumQuarto.add(null);
+		*/
 	}
 	
 	public void listarCliente() {

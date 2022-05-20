@@ -25,28 +25,30 @@ public class Quarto extends Check{
 	public void cadastarQuarto() {
 		
 		String nome, posicao;
-		boolean fumante;
+		String fumante;
 		float valorDiaria;
 		int pessoaPorQuarto;
-		/*
+		boolean fumanteBoo;
+		
 		System.out.println("Nome: ");
 		nome = teclado.next();
 		System.out.println("Posição: ");
 		posicao = teclado.next();
-		System.out.println("Fumante: ");
-		fumante = teclado.nextBoolean();
 		System.out.println("Valor Diaria: ");
 		valorDiaria = teclado.nextInt();
 		System.out.println("Pessoa por quarto: ");
 		pessoaPorQuarto = teclado.nextInt();
+		System.out.println("Fumante: ");
+		fumante = teclado.next();
+		fumanteBoo = converteTrueFalse(fumante);
 		
 		quartoNomes.add(nome);
 		quartoPosicao.add(posicao);
 		quartoValorDiaria.add((float) valorDiaria);
 		quartoPessoaPorQuarto.add(pessoaPorQuarto);
-		quartoFumante.add(fumante);
-		super.quartoOcupado.add(false); // Quarto livre
-			*/	
+		quartoFumante.add(fumanteBoo);
+		super.quartoOcupado.add(true); // Quarto livre
+		/*		
 		quartoNomes.add("AAA");
 		quartoPosicao.add("Sul");
 		//quartoFumante.add(false);
@@ -70,7 +72,7 @@ public class Quarto extends Check{
 		quartoPessoaPorQuarto.add(1);
 		super.quartoFumante.add(true); //Quarto para fumante
 		super.quartoOcupado.add(true); //Quarto livre
-		
+		*/
 	}
 	
 	public void listarQuartos() {

@@ -12,8 +12,6 @@ import java.util.Scanner;
  */
 public class Quarto extends Check{
 	
-	int qntQuarto;
-	
 	ArrayList<String>  quartoNomes = new ArrayList<>();
 	ArrayList<String>  quartoPosicao = new ArrayList<>();
 	//ArrayList<Boolean> quartoFumante = new ArrayList<>();

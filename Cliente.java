@@ -130,7 +130,12 @@ public void fazerCheckOut() {
 			System.out.println("Cidade: " + clienteCidade.get(i));
 			System.out.println("UF: " + clienteUf.get(i));
 			System.out.println("Fumante: " + converteSimNao(clienteFumante.get(i)));
-			System.out.println("Quarto: " + clienteNumQuarto.get(i));
+			if(clienteNumQuarto.get(i) == null) {
+				System.out.println("Check-in não realizado!");
+			}else {
+				System.out.println("Quarto nº: " + clienteNumQuarto.get(i));
+			}
+			
 			System.out.println("----------------------------------------");
 			}
 		}

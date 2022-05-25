@@ -13,7 +13,8 @@ import java.util.Scanner;
  */
 public class Cliente extends Check{
 	
-	Integer quarto;
+	Integer quartoNum;
+	String quartoNom;
 	ArrayList<String>  clienteNomes = new ArrayList<>();
 	ArrayList<String>  clienteDataNasc = new ArrayList<>();
 	ArrayList<String>  clienteEmail = new ArrayList<>();
@@ -38,11 +39,11 @@ public class Cliente extends Check{
 		System.out.print("Selecione Nº do Cliente: ");
 		posicaoCliente = teclado.nextInt();
 		
-		quarto = checkIn(clienteFumante.get(posicaoCliente));
+		quartoNum = checkIn(clienteFumante.get(posicaoCliente));
 		
 		for(int i = 0; i < clienteNumQuarto.size(); i++) {
 			if(posicaoCliente == i) {
-				clienteNumQuarto.set(i, quarto);
+				clienteNumQuarto.set(i, quartoNum); //
 				
 			}
 		}
@@ -88,14 +89,53 @@ public void fazerCheckOut() {
 		fumante = teclado.next();
 		fumanteBoo = converteTrueFalse(fumante);
 		
-		clienteNomes.add(nome);
-		clienteDataNasc.add(dataNasc);
-		clienteEmail.add(email);
-		clienteTelefone.add(telefone);
-		clienteCidade.add(cidade);
-		clienteUf.add(uF);
-		clienteFumante.add(fumanteBoo);
-		clienteNumQuarto.add(null);
+		if(clienteNomes.size() == 0) {
+			
+			clienteNomes.add(nome);
+			clienteDataNasc.add(dataNasc);
+			clienteEmail.add(email);
+			clienteTelefone.add(telefone);
+			clienteCidade.add(cidade);
+			clienteUf.add(uF);
+			clienteFumante.add(fumanteBoo);
+			clienteNumQuarto.add(null);
+		}else {
+			int tamanhoListaNomes = clienteNomes.size();
+			int indiceLista = 0;
+			Boolean posicaoListaNull = false;
+
+			for(int i = 0; i < tamanhoListaNomes; i++) {
+				
+				if(clienteNomes.get(i) == null) {
+					posicaoListaNull = true;
+					indiceLista = i;
+				}
+			}
+			
+			if(posicaoListaNull == true) {				
+				clienteNomes.set(indiceLista, nome);
+				clienteDataNasc.set(indiceLista, dataNasc);
+				clienteEmail.set(indiceLista, email);
+				clienteTelefone.set(indiceLista, telefone);
+				clienteCidade.set(indiceLista, cidade);
+				clienteUf.set(indiceLista, uF);
+				clienteFumante.set(indiceLista, fumanteBoo);
+				clienteNumQuarto.set(indiceLista, null);
+			}else {
+				clienteNomes.add(nome);
+				clienteDataNasc.add(dataNasc);
+				clienteEmail.add(email);
+				clienteTelefone.add(telefone);
+				clienteCidade.add(cidade);
+				clienteUf.add(uF);
+				clienteFumante.add(fumanteBoo);
+				clienteNumQuarto.add(null);
+			}
+		}
+		
+		System.out.println(clienteNomes); //
+		
+		
 		
 		/* 	
 		clienteNomes.add("Fulano");
@@ -106,6 +146,7 @@ public void fazerCheckOut() {
 		clienteUf.add("FF");
 		clienteFumante.add(false);
 		clienteNumQuarto.add(null);
+		super.clienteDisponivel.add(true); // Sem check-in ainda
 		
 		clienteNomes.add("Siclano");
 		clienteDataNasc.add("02/02/2002");
@@ -115,6 +156,7 @@ public void fazerCheckOut() {
 		clienteUf.add("SS");
 		clienteFumante.add(true);
 		clienteNumQuarto.add(null);
+		super.clienteDisponivel.add(true); // Sem check-in ainda
 		*/
 	}
 	
@@ -133,7 +175,7 @@ public void fazerCheckOut() {
 			if(clienteNumQuarto.get(i) == null) {
 				System.out.println("Check-in não realizado!");
 			}else {
-				System.out.println("Quarto nº: " + clienteNumQuarto.get(i));
+				System.out.println("Quarto: " + clienteNumQuarto.get(i));
 			}
 			
 			System.out.println("----------------------------------------");
@@ -162,10 +204,11 @@ public void fazerCheckOut() {
 		clienteCidade.set(posicaoRemove, null);
 		clienteUf.set(posicaoRemove, null);
 		clienteFumante.set(posicaoRemove, null);
+		quartoDisponivel.set(posicaoRemove, true); // "false" quarto Não ocupado
 		
 		if(clienteNomes.get(posicaoRemove) == null) {
 			System.out.println("\n...............................");
-			System.out.println("Clente excluido com sucesso!");
+			System.out.println("Clinte excluido com sucesso!");
 			System.out.println("...............................");
 		}else {
 			System.out.println("\n...............................");

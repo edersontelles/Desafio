@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Check {
 
 	static ArrayList<Boolean> quartoFumante = new ArrayList<>();
-	static ArrayList<Boolean> quartoOcupado = new ArrayList<>();
+	static ArrayList<Boolean> quartoDisponivel = new ArrayList<>();
 	
 	public Integer checkIn(boolean clienteFumente) {
 		
@@ -19,9 +19,9 @@ public class Check {
 
 			for(int i = 0; i < quartoFumante.size(); i++) {
 				
-				if(quartoFumante.get(i).equals(clienteFumente) && quartoOcupado.get(i).equals(true)) {
+				if(quartoFumante.get(i).equals(clienteFumente) && quartoDisponivel.get(i).equals(true)) {
 					posicaoQuarto = i;
-					quartoOcupado.set(i, false); // "false" quarto ocupado
+					quartoDisponivel.set(i, false); // "false" quarto ocupado
 					break;
 				}
 			}
@@ -39,9 +39,9 @@ public class Check {
 	public void checkOut(boolean clienteFumente) {
 		for(int i = 0; i < quartoFumante.size(); i++) {
 			
-			if(quartoFumante.get(i).equals(clienteFumente) && quartoOcupado.get(i).equals(false)) {
+			if(quartoFumante.get(i).equals(clienteFumente) && quartoDisponivel.get(i).equals(false)) {
 
-				quartoOcupado.set(i, true); // "true" quarto disponivel
+				quartoDisponivel.set(i, true); // "true" quarto disponivel
 				break;
 			}
 		}

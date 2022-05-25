@@ -45,7 +45,7 @@ public class Quarto extends Check{
 		quartoValorDiaria.add((float) valorDiaria);
 		quartoPessoaPorQuarto.add(pessoaPorQuarto);
 		quartoFumante.add(fumanteBoo);
-		super.quartoOcupado.add(true); // Quarto livre
+		super.quartoDisponivel.add(true); // Quarto livre
 		/*		
 		quartoNomes.add("AAA");
 		quartoPosicao.add("Sul");
@@ -88,7 +88,7 @@ public class Quarto extends Check{
 		}
 		for(int i = 0; i < super.quartoFumante.size(); i++) {
 			if(super.quartoFumante.get(i) != null)
-			System.out.println("Quarto " + quartoNomes.get(i) + " fumante: " + converteSimNao(quartoFumante.get(i)) + " | disponível: " + converteSimNao(quartoOcupado.get(i)));
+			System.out.println("Quarto " + i + " - " + quartoNomes.get(i) + " | fumante: " + converteSimNao(quartoFumante.get(i)) + " | disponível: " + converteSimNao(quartoDisponivel.get(i)));
 		}
 		System.out.println("----------------------------------------");
 	}
@@ -104,7 +104,7 @@ public class Quarto extends Check{
 		
 		for(int i = 0; i < super.quartoFumante.size(); i++) {
 			if(super.quartoFumante.get(i) != null)
-			System.out.println("Quarto " + quartoNomes.get(i) + " fumante: " + converteSimNao(quartoFumante.get(i)) + " | disponível: " + converteSimNao(quartoOcupado.get(i)));
+			System.out.println("Quarto " + quartoNomes.get(i) + " fumante: " + converteSimNao(quartoFumante.get(i)) + " | disponível: " + converteSimNao(quartoDisponivel.get(i)));
 		}
 		System.out.println("----------------------------------------");
 	}
@@ -128,7 +128,7 @@ public class Quarto extends Check{
 		quartoValorDiaria.set(posicaoRemover, null);
 		quartoPessoaPorQuarto.set(posicaoRemover, null);
 		super.quartoFumante.set(posicaoRemover, null);
-		super.quartoOcupado.set(posicaoRemover, null);
+		super.quartoDisponivel.set(posicaoRemover, null);
 		
 		if(quartoNomes.get(posicaoRemover) == null) {
 			System.out.println("\n...............................");

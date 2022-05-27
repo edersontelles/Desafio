@@ -61,7 +61,7 @@ public class Check {
 	public Boolean converteTrueFalse(String valorString) {
 		Boolean tF;
 		
-		if(valorString.equals("Sim") || valorString.equals("sim")) {
+		if(valorString.equals("Sim") || valorString.equals("sim") || valorString.equals("s")) {
 			tF = true;
 		}else {
 			tF = false;

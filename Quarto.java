@@ -40,12 +40,44 @@ public class Quarto extends Check{
 		fumante = teclado.next();
 		fumanteBoo = converteTrueFalse(fumante);
 		
-		quartoNomes.add(nome);
-		quartoPosicao.add(posicao);
-		quartoValorDiaria.add((float) valorDiaria);
-		quartoPessoaPorQuarto.add(pessoaPorQuarto);
-		quartoFumante.add(fumanteBoo);
-		super.quartoDisponivel.add(true); // Quarto livre
+		if(quartoNomes.size() == 0) {
+			
+			quartoNomes.add(nome);
+			quartoPosicao.add(posicao);
+			quartoValorDiaria.add((float) valorDiaria);
+			quartoPessoaPorQuarto.add(pessoaPorQuarto);
+			quartoFumante.add(fumanteBoo);
+			super.quartoDisponivel.add(true); // Quarto livre
+		}else {
+			int tamanhoListaNomes = quartoNomes.size();
+			int indiceLista = 0;
+			Boolean posicaoListaNull = false;
+			
+			for(int i = 0; i < tamanhoListaNomes; i++) {
+				
+				if(quartoNomes.get(i) == null) {
+					posicaoListaNull = true;
+					indiceLista = i;
+				}
+			}
+			if(posicaoListaNull == true) {
+				quartoNomes.set(indiceLista, nome);
+				quartoPosicao.set(indiceLista, posicao);
+				quartoValorDiaria.set(indiceLista, valorDiaria);
+				quartoPessoaPorQuarto.set(indiceLista, pessoaPorQuarto);
+				quartoFumante.set(indiceLista, fumanteBoo);
+				super.quartoDisponivel.add(true); // Quarto livre
+			}else {
+				quartoNomes.add(nome);
+				quartoPosicao.add(posicao);
+				quartoValorDiaria.add((float) valorDiaria);
+				quartoPessoaPorQuarto.add(pessoaPorQuarto);
+				quartoFumante.add(fumanteBoo);
+				super.quartoDisponivel.add(true); // Quarto livre
+			}
+			
+		}
+		
 		/*		
 		quartoNomes.add("AAA");
 		quartoPosicao.add("Sul");
@@ -171,7 +203,7 @@ public class Quarto extends Check{
 		valorDiariaEditado = teclado.nextFloat();
 		System.out.println("Editar nº de pessoa p/ quarto " + pessoaPorQuarto + " para: ");
 		pessoaPorQuartoEditado = teclado.nextInt();
-		System.out.println("Editar fumante " + fumante + " para: ");
+		System.out.println("Editar fumante " + converteSimNao(fumante) + " para: ");
 		fumanteEditado = teclado.next();
 		fumanteEditadoBoo = converteTrueFalse(fumanteEditado);
 		

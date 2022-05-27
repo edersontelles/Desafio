@@ -72,7 +72,6 @@ public void fazerCheckOut() {
 		String fumante;
 		Boolean fumanteBoo;
 		
-		
 		System.out.println("Nome: ");
 		nome = teclado.next();
 		System.out.println("Data de Nascimento: ");
@@ -112,7 +111,7 @@ public void fazerCheckOut() {
 				}
 			}
 			
-			if(posicaoListaNull == true) {				
+			if(posicaoListaNull == true) {
 				clienteNomes.set(indiceLista, nome);
 				clienteDataNasc.set(indiceLista, dataNasc);
 				clienteEmail.set(indiceLista, email);
@@ -132,11 +131,7 @@ public void fazerCheckOut() {
 				clienteNumQuarto.add(null);
 			}
 		}
-		
-		System.out.println(clienteNomes); //
-		
-		
-		
+				
 		/* 	
 		clienteNomes.add("Fulano");
 		clienteDataNasc.add("01/01/1001");

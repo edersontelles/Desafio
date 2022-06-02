@@ -19,7 +19,6 @@ public class Teste {
 		System.out.println("Quartos : " + quartos);
 		System.out.println("Check-in: " + hotel.get(5));
 		
-
 	}
 	
 	public static void cadastraCliente(){

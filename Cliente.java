@@ -3,6 +3,10 @@
  */
 package Desafio1.v4;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -25,6 +29,13 @@ public class Cliente extends Check{
 	ArrayList<Integer> clienteNumQuarto = new ArrayList<>(); //guardar nº do quarto
 	
 	Scanner teclado = new Scanner(System.in);
+	
+	//Encadeamento de classes...
+	InputStream is = System.in;
+	InputStreamReader isr = new InputStreamReader(is);
+	BufferedReader br = new BufferedReader(isr);
+	
+	//BufferedReader bra = new BufferedReader(new InputStreamReader(System.in));
 	
 	public void fazerCheckIn() {
 		
@@ -65,7 +76,7 @@ public void fazerCheckOut() {
 		checkOut(clienteFumante.get(posicaoCliente));
 	}
 	
-	public void cadastraCliente() {
+	public void cadastraCliente() throws IOException {
 		
 		String nome, dataNasc, email, cidade, uF;
 		Integer telefone;
@@ -73,15 +84,17 @@ public void fazerCheckOut() {
 		Boolean fumanteBoo;
 		
 		System.out.println("Nome: ");
-		nome = teclado.next();
+		//nome = teclado.next();
+		nome = br.readLine();
 		System.out.println("Data de Nascimento: ");
 		dataNasc = teclado.next();
 		System.out.println("Email: ");
 		email = teclado.next();
 		System.out.println("Telefone: ");
-		telefone = teclado.nextInt();
+		telefone = Integer.parseInt(br.readLine());
 		System.out.println("Cidade: ");
-		cidade= teclado.next();
+		//cidade = teclado.next();
+		cidade = br.readLine();
 		System.out.println("UF: ");
 		uF = teclado.next();
 		System.out.println("Fumante Sim ou Não: ");
@@ -212,7 +225,7 @@ public void fazerCheckOut() {
 		}
 	}
 	
-	public void editarCliente() {
+	public void editarCliente() throws IOException {
 	
 		int posicaoEditar;
 		String nome, dataNasc, email, cidade, uF, nomeEditado, dataNascEditado, emailEditado, cidadeEditado, ufEditado; 
@@ -237,7 +250,7 @@ public void fazerCheckOut() {
 		fumante = clienteFumante.get(posicaoEditar);//Boolean
 		
 		System.out.println("Editar nome " + nome + " para: ");
-		nomeEditado = teclado.next();
+		nomeEditado = br.readLine();
 		System.out.println("Editar D/N " + dataNasc + " para: ");
 		dataNascEditado = teclado.next();
 		System.out.println("Editar email " + email + " para: ");
@@ -245,7 +258,7 @@ public void fazerCheckOut() {
 		System.out.println("Editar telefone " + telefone + " para: ");
 		telefoneEditado = teclado.nextInt();
 		System.out.println("Editar cidade " + cidade + " para: ");
-		cidadeEditado = teclado.next();
+		cidadeEditado = br.readLine();
 		System.out.println("Editar UF " + uF + " para: ");
 		ufEditado = teclado.next();
 		System.out.println("Editar fumante " + converteSimNao(fumante) + " para: ");

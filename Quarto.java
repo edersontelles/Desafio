@@ -3,6 +3,9 @@
  */
 package Desafio1.v4;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -20,7 +23,9 @@ public class Quarto extends Check{
 	
 	Scanner teclado = new Scanner(System.in);
 	
-	public void cadastarQuarto() {
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	
+	public void cadastarQuarto() throws IOException {
 		
 		String nome, posicao;
 		String fumante;
@@ -29,7 +34,7 @@ public class Quarto extends Check{
 		boolean fumanteBoo;
 		
 		System.out.println("Nome: ");
-		nome = teclado.next();
+		nome = br.readLine();
 		System.out.println("Posição: ");
 		posicao = teclado.next();
 		System.out.println("Valor Diaria: ");
@@ -173,7 +178,7 @@ public class Quarto extends Check{
 		}
 	}
 	
-	public void editarQuarto() {
+	public void editarQuarto() throws IOException {
 		
 		int posicaoEditar;
 		String nome, posicao, nomeEditado, posicaoEditado, fumanteEditado;
@@ -196,7 +201,7 @@ public class Quarto extends Check{
 		pessoaPorQuarto = quartoPessoaPorQuarto.get(posicaoEditar);
 		
 		System.out.println("Editar nome " + nome + " para: ");
-		nomeEditado = teclado.next();
+		nomeEditado = br.readLine();
 		System.out.println("Editar posição  " + posicao + " para: ");
 		posicaoEditado = teclado.next();
 		System.out.println("Editar valor da diaria  " + valorDiaria + " para: ");
